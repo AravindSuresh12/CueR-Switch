@@ -1,4 +1,4 @@
-﻿Average_time(h),<Venus-CueR-Cu> (nM),<Venus+CueR-Cu> (nM),<Venus+CueR+Cu> (nM),SE1(nM),SE2(nM),SE3(nM),<CueR>(nM),SE_1(nM)
+Average_time(h),<Venus-CueR-Cu>(nM),<Venus+CueR-Cu>(nM),<Venus+CueR+Cu>(nM),SE1(nM),SE2(nM),SE3(nM),<CueR>(nM),SE_1(nM)
 0,0,0,0,0,0,0,0,0
 0.5,,,1.060973463,,,0.187174623,1040.672532,151.0566533
 1,,,0.227354634,,,0.063843158,210.7259636,32.02626063
