@@ -568,25 +568,25 @@ function load_experimental_data_dictionary(base_path::String)
   exp_data_dictionary = Dict{String,Any}()
 
   # load protein data -
-  full_data_table_path = "$(base_path)/data/Processed_Data/S12/Final_MODEL_FIT.csv"
+  full_data_table_path = "$(base_path)/data/protein_data.csv"
   full_data_table = CSV.read(full_data_table_path,DataFrame)
 
   # protein -
-  T = full_data_table[!,"Time(h)"]
-  mean_Venus = full_data_table[!,"Venus(uM)"]
-  stdev_Venus = full_data_table[!,"STDERR(uM)"]
+  T = full_data_table[!,"time(h)"]
+  mean_Venus = full_data_table[!,"Mean_100uM(uM)"]
+  stdev_Venus = full_data_table[!,"Sterr_100uM(uM)"]
   prot_data_array = [T mean_Venus stdev_Venus]
 
   #load_mrna data
-  full_data_table_path1 = "$(base_path)/data/Processed_Data/S12/mRNA_S12_Data.csv"
+  full_data_table_path1 = "$(base_path)/data/mRNA_data.csv"
   full_data_table1 = CSV.read(full_data_table_path1,DataFrame)
 
   # mRNA -
-  T = full_data_table1[!,"Time(h)"]
-  mRNA_Venus = full_data_table1[!,"Venus(nM)"]
-  stdev_Venus = full_data_table1[!,"stderrVenus"]
-  mRNA_CueR = full_data_table1[!,"CueR(nM)"]
-  stdev_CueR = full_data_table1[!,"stderrCueR"]
+  T = full_data_table1[!,"Average_Time(h)"]
+  mRNA_Venus = full_data_table1[!,"<Venus+CueR+Cu>(nM)"]
+  stdev_Venus = full_data_table1[!,"SE3(nM)"]
+  mRNA_CueR = full_data_table1[!,"<CueR>(nM)"]
+  stdev_CueR = full_data_table1[!,"SE_1(nM)"]
   mRNA_data_array = [T mRNA_Venus stdev_Venus mRNA_CueR stdev_CueR]
 
   # package -------------------------------------------------- #
