@@ -38,6 +38,8 @@ include("POETs.jl")
 # system packages - these are required to be installed -
 # check - if they are installed, all is good with the world.
 # if not then install them
+
+
 using LinearAlgebra # pre-installed w/Julia
 using Statistics    # pre-installed w/Julia
 using Pkg           # pre-installed w/Julia
@@ -115,13 +117,10 @@ using CSV
 using Interpolations
 using DataInterpolations
 
-#using DiffEqSensitivity
+using DiffEqSensitivity
 using GlobalSensitivity
-
 using NumericalIntegration
-
 using Plots
 using Statistics
 using PyPlot
-
 using Symbolics
