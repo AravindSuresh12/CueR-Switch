@@ -25,6 +25,11 @@
 # include -
 include("Include.jl")
 
+
+time_start = 0.0
+time_stop = 16.0
+time_step_size = 0.01
+
 function update_model_dictionary(parameter_array,default_model_dictionary)
 
     # what is the host_type?
@@ -42,23 +47,23 @@ function update_model_dictionary(parameter_array,default_model_dictionary)
 
 	control_parameter_dictionary = data_dictionary["control_parameter_dictionary"]
 
-	control_parameter_dictionary["W_T7RNAP"] = exp(-1*(poets_params[1]))
-	control_parameter_dictionary["W_apo"]=  exp(-1*(poets_params[2]))
-	control_parameter_dictionary["W_holo"]= exp(-1*(poets_params[3]))
+	control_parameter_dictionary["W_T7RNAP"] = exp(-1*(parameter_array[1]))
+	control_parameter_dictionary["W_apo"]=  exp(-1*(parameter_array[2]))
+	control_parameter_dictionary["W_holo"]= exp(-1*(parameter_array[3]))
 	
 	binding_parameter_dictionary = data_dictionary["binding_parameter_dictionary"]
-	binding_parameter_dictionary["n_CueR_OCueR"] =poets_params[4]
-	binding_parameter_dictionary["K_CueR_OCueR_apo"] =poets_params[5]
-	binding_parameter_dictionary["K_CueR_OCueR_holo"] =poets_params[6]
+	binding_parameter_dictionary["n_CueR_OCueR"] =parameter_array[4]
+	binding_parameter_dictionary["K_CueR_OCueR_apo"] =parameter_array[5]
+	binding_parameter_dictionary["K_CueR_OCueR_holo"] =parameter_array[6]
 	data_dictionary["binding_parameter_dictionary"] = binding_parameter_dictionary
 	
 	time_constant_modifier_array = [
 		0.0							;	# 1	CueR
 		0.0							;	# 2	Venus
-		poets_params[7]	        ;	# 4	mRNA_CueR
-		poets_params[8]       ;	    # 5	mRNA_Venus
-		poets_params[9]	        ;	# 7	protein_CueR
-		poets_params[10]	        ;	# 8	protein_Venus
+		parameter_array[7]	        ;	# 4	mRNA_CueR
+		parameter_array[8]       ;	    # 5	mRNA_Venus
+		parameter_array[9]	        ;	# 7	protein_CueR
+		parameter_array[10]	        ;	# 8	protein_Venus
 	]
 	
 	data_dictionary["time_constant_modifier_array"] = time_constant_modifier_array
@@ -66,28 +71,27 @@ function update_model_dictionary(parameter_array,default_model_dictionary)
 	degradation_modifier_array = [
 		0.0	;	# 1	GntR
 		0.0	;	# 2	Venus
-		poets_params[11]	;	# 4	mRNA_GntR
-		poets_params[12]	;	# 5	mRNA_Venus
-		poets_params[13]	;	# 7	protein_CueR
-		poets_params[14]	;	# 8	protein_Venus
+		parameter_array[11]	;	# 4	mRNA_GntR
+		parameter_array[12]	;	# 5	mRNA_Venus
+		parameter_array[13]	;	# 7	protein_CueR
+		parameter_array[14]	;	# 8	protein_Venus
 	]
 	
 	data_dictionary["degradation_modifier_array"] = degradation_modifier_array
 	
 	# update the translation time -
-	data_dictionary["half_life_translation_capacity"] = poets_params[15]
+	data_dictionary["half_life_translation_capacity"] = parameter_array[15]
 	
 	biophysical_constants_dictionary = data_dictionary["biophysical_constants_dictionary"]
-	biophysical_constants_dictionary["translation_saturation_constant"] = poets_params[16]
-	biophysical_constants_dictionary["transcription_saturation_constant"] = poets_params[17]
+	biophysical_constants_dictionary["translation_saturation_constant"] = parameter_array[16]
 	data_dictionary["biophysical_constants_dictionary"] = biophysical_constants_dictionary
 	
 	# Copper CueR binding parameters
 	cuprous_parameter_dictionary = data_dictionary["cuprous_parameter_dictionary"]
-	cuprous_parameter_dictionary["K_diss_CuSO4"] = poets_params[18]
-	cuprous_parameter_dictionary["n_copper_cuer"] = poets_params[19]
+	cuprous_parameter_dictionary["K_diss_CuSO4"] = parameter_array[17]
+	cuprous_parameter_dictionary["n_copper_cuer"]= parameter_array[18]
+	cuprous_parameter_dictionary["k_t"]= parameter_array[19]
 
-	
 	data_dictionary["cuprous_parameter_dictionary"] = cuprous_parameter_dictionary
 	
 	species_symbol_type_array = data_dictionary["species_symbol_type_array"]
@@ -115,6 +119,9 @@ function update_model_dictionary(parameter_array,default_model_dictionary)
     # return -
     return data_dictionary
 end
+
+
+for copper_conc in Any[0,5,10,50,100] #for my issue
 
 
 function main(path_to_ensemble_file::String, path_to_sim_dir::String; sample_fraction::Float64=1.0)
@@ -155,6 +162,10 @@ function main(path_to_ensemble_file::String, path_to_sim_dir::String; sample_fra
         # update the default data_dictionary to reflect the new parameters -
         model_data_dictionary = update_model_dictionary(local_parameter_array, customized_data_dictionary)
 
+		cuprous_parameter_dictionary = model_data_dictionary["cuprous_parameter_dictionary"]
+		cuprous_parameter_dictionary["copper_salt_conc"] =copper_conc
+		model_data_dictionary["cuprous_parameter_dictionary"] = cuprous_parameter_dictionary
+
 		# solve the model equations -
         (T,X) = SolveBalances(time_start,time_stop,time_step_size,model_data_dictionary)
 
@@ -169,11 +180,14 @@ function main(path_to_ensemble_file::String, path_to_sim_dir::String; sample_fra
 end
 
 # setup paths -
-path_to_sim_file = "$(pwd())/simulated/copper_dynamics"
-path_to_ensemble_file = "$(pwd())/simulated/POETS/PC_T6.dat"
+local path_to_sim_file = "$(pwd())/simulated/copper_dynamics/$(copper_conc)uM"
+local path_to_ensemble_file = "$(pwd())/simulated/POETS/PC_T6.dat"
+
+
+
 
 # call -
-time_start = 0.0
-time_stop = 16.0
-time_step_size = 0.01
 main(path_to_ensemble_file, path_to_sim_file; sample_fraction = 1.0)
+
+end
+
