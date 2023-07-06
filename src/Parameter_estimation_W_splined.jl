@@ -301,7 +301,7 @@ function check_parameter_bounds(parameter_array)
 		# K_copper_CueR-
 		10 50				; # 
 
-        1.5 2.0  #N CUER 18 2.6 to 3.2
+        1.0 2.0  #N
     ];
 	
     pvec_initial = parameter_array
@@ -407,8 +407,8 @@ pvec_initial = [
 	# time constants -
 	1         ;	# 7	    mRNA_CueR 0.05
 	1         ;	# 8	    mRNA_Venus 20
-	1         ;	# 9	    protein_CueR 60
-	1        ;	# 10	    protein_Venus 2
+	10         ;	# 9	    protein_CueR 60
+	10        ;	# 10	    protein_Venus 2
 
 	# degradation mods -
 	1	        ;	# 11	    mRNA_CueR 2
@@ -430,7 +430,7 @@ pvec_initial = [
 	# K_copper_CueR-
 	25				; # 18 uM
 
-    1.5 #N COPPER CUER 19
+    1.2 #N COPPER CUER 19
 
 
     # # transcription capacity terms-

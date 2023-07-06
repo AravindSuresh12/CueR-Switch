@@ -121,8 +121,8 @@ function build_data_dictionary(time_span::Tuple{Float64,Float64,Float64}, path_t
 		0.0	;	# 2	Venus
 		1.0;	# 3	mRNA_CueR-
 		1.0	;	# 4	mRNA_Venus
-		1.0	;	# 5	protein_CueR #
-		1.0;	# 6	protein_Venus- 
+		10.0	;	# 5	protein_CueR #
+		10.0;	# 6	protein_Venus- 
 	]
 
 	# degradation modifiers - #
@@ -153,18 +153,20 @@ function build_data_dictionary(time_span::Tuple{Float64,Float64,Float64}, path_t
 		"W_holo"  #3
 		"n_CueR_OCueR"; #4
 		"K_CueR_OCueR_apo"; #5
-		"K_CueR_OCueR_holo"; #6
-		"K_diss_CuSO4" #7
-		"n_copper_cuer"
-		"RNAP concentration" #8
-		"ribosome_concentration"	;	# 9
-		"degradation_constant_mRNA"	;	# 10
-		"degradation_constant_protein"	;	# 11
-		"kcat_transcription"	;	# 12
-		"kcat_translation"	;	# 13
-		"saturation_constant_transcription"	;	# 14
-		"saturation_constant_translation"; #15
-		"tuning_factor" #16
+		"K_CueR_OCueR_holo"; #6;	 
+		"tc mod mRNA_CueR"         	;   # 7
+		"tc mod mRNA_Venus"         ;   # 8
+		"tc mod prot_CueR"         	;   # 9
+        "tc mod prot_Venus"         ;   # 10
+        "stability mRNA_CueR"      	;   # 11
+		"stability mRNA_Venus"      ;   # 12
+		"stability CueR"      		;   # 13
+        "stability Venus"           ;   # 14
+        "half-life translation"     ;   # 15
+        "saturation translation"    ;   # 16
+        "saturation transcription"  ; #17
+        "K_half_max_induction"      #18
+        "n_copper_cuer"     ;   # 19
 	]
 
 	# =============================== DO NOT EDIT BELOW THIS LINE ============================== #

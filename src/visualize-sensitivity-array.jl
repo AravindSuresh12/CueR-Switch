@@ -258,4 +258,4 @@ y_axis_points = calculate_y_axis_tick_positions(rsa)
 # call plotting code -
 figure(1)
 visualize(rsa,x_axis_points,y_axis_points, p_label_array)
-PyPlot.savefig("Sensitivity_matrix_CueR.pdf")
+PyPlot.savefig("./plots/Sensitivity_matrix_CueR.pdf")

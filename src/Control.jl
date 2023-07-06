@@ -93,7 +93,7 @@ function calculate_transcription_control_array(t::Float64,x::Array{Float64,1},da
 
 
 
-	g_holo_CueR= abs(holo_CueR)^(n_CueR_OCueR)/ (abs(holo_CueR)^(n_CueR_OCueR) + (K_CueR_OCueR_holo)^(n_CueR_OCueR))
+	g_holo_CueR= abs(holo_CueR)^(n_CueR_OCueR)/ (abs(holo_CueR)^(n_CueR_OCueR) + (K_CueR_OCueR_holo)^(n_CueR_OCueR)) #THIS IS AN ACTIVATOR
 
 	g_apo_CueR= abs(apo_CueR)^(n_CueR_OCueR)/(abs(apo_CueR)^(n_CueR_OCueR) + abs(K_CueR_OCueR_apo)^(n_CueR_OCueR)) #THIS IS A REPRESSOR
 	
@@ -130,7 +130,7 @@ function calculate_translation_control_array(t::Float64,x::Array{Float64,1},data
 	control_array = ones(2)
 	
 
-	correction_term = (x[7]/1000.0)
+	correction_term = (x[7]/100.0)
 
     control_array = control_array*correction_term
 	# # # return -

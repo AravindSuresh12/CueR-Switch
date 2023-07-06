@@ -54,7 +54,7 @@ function main(path_to_simulation_dir::String, path_to_plot_file::String, concent
     # PyPlot.yticks([0,0.4,0.8,1.2,1.6,2.0], fontsize=22)
     PyPlot.yticks(fontsize=22)
     PyPlot.tight_layout()
-    PyPlot.savefig("$(path_to_plot_file)/prot-CueR_$(concentration)uM_2.pdf")
+    PyPlot.savefig("$(path_to_plot_file)/prot-CueR_$(concentration)uM.pdf")
 end
 
 

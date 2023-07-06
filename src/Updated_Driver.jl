@@ -44,7 +44,7 @@ R = data_dictionary["R"]
 T_K = data_dictionary["T_K"]
 # compute W -
 
-PC = readdlm("./simulated/POETS/PC_T6.dat") 
+PC = readdlm("./simulated/POETS/PC_T5.dat") #T5 it is
 average_params = mean(PC,dims=2)
 poets_params=average_params
 
@@ -140,7 +140,7 @@ P1= Plots.scatter!(Tx, mean_Venus, label="Venus_Expt_Protein",xlabel="Time (hr)"
 
 mRNA_data = CSV.read("./data/mRNA_data.csv",DataFrame)
 T1 = mRNA_data[!,"Average_time(h)"]
-mRNA_Venus = mRNA_data[!,"<Venus+CueR+Cu> (nM)"]
+mRNA_Venus = mRNA_data[!,"<Venus+CueR+Cu>(nM)"]
 stdev_Venus = mRNA_data[!,"SE3(nM)"]
 mRNA_CueR = mRNA_data[!,"<CueR>(nM)"]
 stdev_CueR = mRNA_data[!,"SE_1(nM)"]
@@ -175,6 +175,6 @@ P4= Plots.plot(copper_sim,empty_test, xlabel="copper salt concentration (μM)", 
 
 P4= Plots.scatter!(copper_sim,exp_val, xlabel="copper salt concentration (μM)", ylabel="Venus (μM)",label="experimental dose response", legend=:bottomright, legendfontsize=4)
 
+Plots.plot(P1,P2,P3,P4, layout=(2,2))
 
-
-Plots.plot(P1,P2,P3,P4, layout=(2,2) )
+Plots.savefig("./plots/Ensemble.pdf")

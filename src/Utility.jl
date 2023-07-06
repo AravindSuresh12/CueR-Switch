@@ -582,7 +582,7 @@ function load_experimental_data_dictionary(base_path::String)
   full_data_table1 = CSV.read(full_data_table_path1,DataFrame)
 
   # mRNA -
-  T = full_data_table1[!,"Average_Time(h)"]
+  T = full_data_table1[!,"Average_time(h)"]
   mRNA_Venus = full_data_table1[!,"<Venus+CueR+Cu>(nM)"]
   stdev_Venus = full_data_table1[!,"SE3(nM)"]
   mRNA_CueR = full_data_table1[!,"<CueR>(nM)"]
