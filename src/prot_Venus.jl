@@ -7,14 +7,10 @@ function main(path_to_simulation_dir::String, path_to_plot_file::String, concent
     searchdir(path,key) = filter(x->contains(x,key),readdir(path))
     file_name_array = searchdir(path_to_simulation_dir, ".dat")
     number_of_trials = length(file_name_array)
-    # # initialize -> hardcode the dimension for now
-    # data_array = zeros(1201,number_of_trials)
-    # time_array = zeros(1201,number_of_trials)
 
 	dt = 0.1 # hr
 	tEND = convert(Int64,16/dt)
 	t_intervals = collect(0:dt:tEND*dt)
-	# t_intervals = [0,2,4,6,8,10,12]
 	data_array = zeros(length(t_intervals),number_of_trials)
 
     # read the simulation dir -
@@ -30,7 +26,7 @@ function main(path_to_simulation_dir::String, path_to_plot_file::String, concent
 		prot_values = spline_obj.(t_intervals)
 		data_array[:, file_index] = prot_values
 
-        # PyPlot.plot(t,x,color="dimgrey",alpha=0.80,lw=0.5)
+    
     end
     # plot -
 	μ = mean(data_array,dims=2)
@@ -42,15 +38,12 @@ function main(path_to_simulation_dir::String, path_to_plot_file::String, concent
     # Plot mean -
     PyPlot.plot(t_intervals,μ,"-",color="black",lw=2)
 
-	# load the experimemtal data -
-	# experimental_data_dictionary = load_experimental_data_dictionary(pwd())
-	# plot experimental data
-    prot_data = CSV.read("./Data/Processed_Data/S12/MOT.csv",DataFrame)
+    prot_data = CSV.read("./data/protein_data.csv",DataFrame)
 
 	# plot the experimemtal data -
-	TEXP = prot_data[!,"Time(h)"]
-	DATA = prot_data[!,"Venus(uM)"]
-    STD = prot_data[!,"STDERR(uM)"] 
+	TEXP = prot_data[!,"time(h)"]
+	DATA = prot_data[!,"Mean_100uM(uM)"]
+    STD = prot_data[!,"Sterr_100uM(uM)"] 
 
 
 
@@ -65,14 +58,14 @@ function main(path_to_simulation_dir::String, path_to_plot_file::String, concent
     # PyPlot.yticks([0,0.4,0.8,1.2,1.6,2.0], fontsize=22)
     PyPlot.yticks(fontsize=22)
     PyPlot.tight_layout()
-    PyPlot.savefig("$(path_to_plot_file)/prot-Venus_$(concentration)uM_2.pdf")
+    PyPlot.savefig("$(path_to_plot_file)/prot-Venus_$(concentration)uM.pdf")
 end
 
 
 for conc_ in Any[5]
 
 concentration = conc_
-local path_to_simulation_dir = "$(pwd())/simulations/Copper-dynamics/$(conc_)uM"
+local path_to_simulation_dir = "$(pwd())/simulated/copper_dynamics/$(conc_)uM"
 local path_to_plot_file = "$(pwd())/plots"
 clf()
 main(path_to_simulation_dir, path_to_plot_file,concentration)

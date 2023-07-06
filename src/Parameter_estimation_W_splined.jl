@@ -261,7 +261,7 @@ function local_refienment_step(path_to_data_dir, parameter_array; sigma=0.05, it
     return parameter_array_best
 end
 
-function check_parameter_bounds(parameter_array)
+function check_parameter_bounds(parameter_array)  #COMMENTS HERE REFER TO THE ORIGINAL PARAMETERS THAT I TRIED HERE FOR MY M-EXAM
 
     pvec_bounds= [
 
@@ -279,8 +279,8 @@ function check_parameter_bounds(parameter_array)
         # time constants - units h
 		0.001 100.0         ;	# 7	 mRNA_CueR 0.045 to 0.06
 	    0.001 100.0         ;	# 8	 mRNA_Venus 18 to 22
-	    0.001 100.0         ;	# 9	 protein_CueR 55 to 70
-		0.001 100.0         ;	# 10 protein_Venus- CHANGED this to 1.8 to 2.2
+	    10.0 100.0         ;	# 9	 protein_CueR 55 to 70
+		10.0 100.0         ;	# 10 protein_Venus- CHANGED this to 1.8 to 2.2
 
         # degradation mods - unts h
 		0.001  100.0 ;	# 11	        mRNA_CueR 1.8 to 2 
@@ -407,8 +407,8 @@ pvec_initial = [
 	# time constants -
 	1         ;	# 7	    mRNA_CueR 0.05
 	1         ;	# 8	    mRNA_Venus 20
-	1         ;	# 9	    protein_CueR 60
-	1        ;	# 10	    protein_Venus 2
+	10         ;	# 9	    protein_CueR 60
+	10        ;	# 10	    protein_Venus 2
 
 	# degradation mods -
 	1	        ;	# 11	    mRNA_CueR 2

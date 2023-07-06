@@ -181,7 +181,7 @@ end
 
 # setup paths -
 local path_to_sim_file = "$(pwd())/simulated/copper_dynamics/$(copper_conc)uM"
-local path_to_ensemble_file = "$(pwd())/simulated/POETS/PC_T6.dat"
+local path_to_ensemble_file = "$(pwd())/simulated/POETS/PC_T4.dat"
 
 
 

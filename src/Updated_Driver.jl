@@ -177,4 +177,4 @@ P4= Plots.scatter!(copper_sim,exp_val, xlabel="copper salt concentration (μM)",
 
 
 
-Plots.plot(P1,P2,P3,P4, layout=(2,2) )
+Plots.plot(P1,P2,P3,P4, layout=(2,2))

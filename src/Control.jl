@@ -130,7 +130,7 @@ function calculate_translation_control_array(t::Float64,x::Array{Float64,1},data
 	control_array = ones(2)
 	
 
-	correction_term = (x[7]/1000.0)
+	correction_term = (x[7]/100.0)
 
     control_array = control_array*correction_term
 	# # # return -

@@ -121,8 +121,8 @@ function build_data_dictionary(time_span::Tuple{Float64,Float64,Float64}, path_t
 		0.0	;	# 2	Venus
 		1.0;	# 3	mRNA_CueR-
 		1.0	;	# 4	mRNA_Venus
-		1.0	;	# 5	protein_CueR #
-		1.0;	# 6	protein_Venus- 
+		10.0	;	# 5	protein_CueR #
+		10.0;	# 6	protein_Venus- 
 	]
 
 	# degradation modifiers - #
