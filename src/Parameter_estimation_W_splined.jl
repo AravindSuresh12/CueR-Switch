@@ -430,6 +430,7 @@ pvec_initial = [
 	# K_copper_CueR-
 	25				; # 18 uM
 
+<<<<<<< Updated upstream
     1.5 #N COPPER CUER 19
 
 
@@ -440,6 +441,9 @@ pvec_initial = [
     # # translation capacity terms-
     # 3.0; # decay (hours)
     # 0.5; # slope
+=======
+    1.2 #N COPPER CUER 19
+>>>>>>> Stashed changes
 ];
 
 # setup -
@@ -470,11 +474,11 @@ for trial_index = 1:number_of_trials
         pV_best = PC[:,best_p_index]
 
         # local refine -
-        pV = local_refienment_step(path_to_data_dir, pV_best; iteration_max=50)
+        pV = local_refienment_step(path_to_data_dir, pV_best; iteration_max=20)
     end
 
     # main -
-    (EC,PC,RA) = main(path_to_data_dir, vec(pV); rank_cutoff=4,maximum_number_of_iterations=50)
+    (EC,PC,RA) = main(path_to_data_dir, vec(pV); rank_cutoff=4,maximum_number_of_iterations=20)
 
     # dump results to disk -
     local  fname = "./simulated/POETS/RA_T$(trial_index).dat"
