@@ -1,27 +1,29 @@
-using DelimitedFiles
-using Plots
+include("Include.jl")
 
-PC_Ensemble=readdlm("./poets_ensemble_W/PC_T6.dat") #best fit
+PC_Ensemble=readdlm("./simulated/POETS/PC_T6.dat") #best fit
 
-
-
-n_CueR_OCueR=PC_Ensemble[4,:]
 K_CueR_OCueR_apo=PC_Ensemble[5,:]
 K_CueR_OCueR_holo=PC_Ensemble[6,:]
-K_diss_CuSO4=PC_Ensemble[18,:]
-
-P15= Plots.histogram(n_CueR_OCueR, bins=50, xlabel="n_CueR_OCueR", ylabel="Count", xguidefontsize=4, yguidefontsize=4,legend=:false, tickfontsize=4, grid=false)
-
-P16= Plots.histogram(K_CueR_OCueR_apo, bins=50, xlabel="K_CueR_OCueR_apo (uM)", ylabel="Count", xguidefontsize=4, yguidefontsize=4,legend=:false, tickfontsize=4, grid=false)
-
-P17= Plots.histogram(K_CueR_OCueR_holo, bins=50, xlabel="K_CueR_OCueR_holo (uM)", ylabel="Count", xguidefontsize=4, yguidefontsize=4,legend=:false, tickfontsize=4, grid=false)
+half_max_induction_CuSO4=PC_Ensemble[18,:]
+fig=figure() 
 
 
-P18= Plots.histogram(K_diss_CuSO4, bins=50, xlabel="Half max induction CuS04 (uM)", ylabel="Count", xguidefontsize=4, yguidefontsize=4,legend=:false, tickfontsize=4, grid=false)
+subplot(1,3,1)
+PyPlot.hist(K_CueR_OCueR_apo, bins=50)
+PyPlot.xlabel("K_CueR_OCueR_apo (μM)", fontsize=5)
+PyPlot.ylabel("count", fontsize=5)
 
-plot(P15,P16,P17,P18, layout=(2,2))
-Plots.savefig("K_values.pdf")
-#Plots.savefig("./Images/Pareto_100/Kc.pdf")
-#Plots.savefig("./Images/Pareto_1000/Kc.pdf")
+subplot(1,3,2)
+PyPlot.hist(K_CueR_OCueR_holo, bins=50)
+PyPlot.xlabel("K_CueR_OCueR_holo (μM)", fontsize=5)
+PyPlot.ylabel("count", fontsize=5)
+
+subplot(1,3,3)
+PyPlot.hist(half_max_induction_CuSO4 , bins=50)
+PyPlot.xlabel("half_max_induction_CuSO4 (μM)", fontsize=5)
+PyPlot.ylabel("count", fontsize=5)
+
+PyPlot.savefig("./plots/Dissociation_constants.pdf")
+
 
 

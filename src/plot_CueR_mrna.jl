@@ -7,9 +7,7 @@ function main(path_to_simulation_dir::String, path_to_plot_file::String, concent
     searchdir(path,key) = filter(x->contains(x,key),readdir(path))
     file_name_array = searchdir(path_to_simulation_dir, ".dat")
     number_of_trials = length(file_name_array)
-    # # initialize -> hardcode the dimension for now
-    # data_array = zeros(1201,number_of_trials)
-    # time_array = zeros(1201,number_of_trials)
+
 
 	dt = 0.1 # hr
 	tEND = convert(Int64,16/dt)
@@ -29,8 +27,6 @@ function main(path_to_simulation_dir::String, path_to_plot_file::String, concent
         spline_obj = DataInterpolations.CubicSpline(x,t)
 		prot_values = spline_obj.(t_intervals)
 		data_array[:, file_index] = prot_values
-
-        # PyPlot.plot(t,x,color="dimgrey",alpha=0.80,lw=0.5)
     end
     # plot -
 	μ = mean(data_array,dims=2)
@@ -60,9 +56,6 @@ function main(path_to_simulation_dir::String, path_to_plot_file::String, concent
 	PyPlot.plot(figsize=(5,4))
 	PyPlot.xlabel("Time (hr)", fontsize=20)
     PyPlot.ylabel("[CueR] (nM)", fontsize=20)
-    # PyPlot.axis([-0.5,16.5,-50,1600])
-    # PyPlot.xticks([0,0.5,1,2,4,8,16], fontsize=12)
-    # PyPlot.yticks([0,0.4,0.8,1.2,1.6,2.0], fontsize=22)
     PyPlot.yticks(fontsize=22)
     PyPlot.tight_layout()
     PyPlot.savefig("$(path_to_plot_file)/mrna-cuer_$(concentration)uM.pdf")

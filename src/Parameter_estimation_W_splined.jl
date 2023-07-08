@@ -280,7 +280,7 @@ function check_parameter_bounds(parameter_array)  #COMMENTS HERE REFER TO THE OR
 		0.001 100.0         ;	# 7	 mRNA_CueR 0.045 to 0.06
 	    0.001 100.0         ;	# 8	 mRNA_Venus 18 to 22
 	    10.0 100.0         ;	# 9	 protein_CueR 55 to 70
-		10.0 100.0         ;	# 10 protein_Venus- CHANGED this to 1.8 to 2.2
+		0.001 100.0         ;	# 10 protein_Venus- CHANGED this to 1.8 to 2.2
 
         # degradation mods - unts h
 		0.001  100.0 ;	# 11	        mRNA_CueR 1.8 to 2 
@@ -301,7 +301,7 @@ function check_parameter_bounds(parameter_array)  #COMMENTS HERE REFER TO THE OR
 		# K_copper_CueR-
 		10 50				; # 
 
-        1.5 2.0  #N CUER 18 2.6 to 3.2
+        1.0 2.0  #N CUER 18 2.6 to 3.2
     ];
 	
     pvec_initial = parameter_array
@@ -408,7 +408,7 @@ pvec_initial = [
 	1         ;	# 7	    mRNA_CueR 0.05
 	1         ;	# 8	    mRNA_Venus 20
 	10         ;	# 9	    protein_CueR 60
-	10        ;	# 10	    protein_Venus 2
+	0.5        ;	# 10	    protein_Venus 2
 
 	# degradation mods -
 	1	        ;	# 11	    mRNA_CueR 2
@@ -430,25 +430,13 @@ pvec_initial = [
 	# K_copper_CueR-
 	25				; # 18 uM
 
-<<<<<<< Updated upstream
-    1.5 #N COPPER CUER 19
-
-
-    # # transcription capacity terms-
-    # 10; # decay (hours)
-    # 0.5; # slope
-
-    # # translation capacity terms-
-    # 3.0; # decay (hours)
-    # 0.5; # slope
-=======
     1.2 #N COPPER CUER 19
->>>>>>> Stashed changes
+
 ];
 
 # setup -
 path_to_data_dir = "$(pwd())"
-pV = neighbor_function(pvec_initial; sigma=0.25)
+pV = pvec_initial #neighbor_function(pvec_initial; sigma=0.25) #uncomment me if you need to have perturbation for pVec
 EC = 0
 PC = 0
 RA = 0

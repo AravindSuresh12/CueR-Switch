@@ -44,7 +44,9 @@ R = data_dictionary["R"]
 T_K = data_dictionary["T_K"]
 # compute W -
 
-PC = readdlm("./simulated/POETS/PC_T6.dat") 
+PC = readdlm("./simulated/POETS/PC_T5.dat") #N=20
+#PC= readdlm("./simulated/POETS_N_Vary/N=5/PC_T5.dat") 
+#PC = readdlm("./simulated/POETS_N_Vary/N=100/PC_T5.dat") 
 average_params = mean(PC,dims=2)
 poets_params=average_params
 
@@ -67,7 +69,7 @@ time_constant_modifier_array = [
     poets_params[7]	        ;	# 4	mRNA_CueR
     poets_params[8]       ;	    # 5	mRNA_Venus
     poets_params[9]	        ;	# 7	protein_CueR
-    poets_params[10]	        ;# 8 protein_Venus
+    poets_params[10]	        ;# 8 protein_Venus- should be 0.5
 ]
 
 data_dictionary["time_constant_modifier_array"] = time_constant_modifier_array
@@ -140,7 +142,7 @@ P1= Plots.scatter!(Tx, mean_Venus, label="Venus_Expt_Protein",xlabel="Time (hr)"
 
 mRNA_data = CSV.read("./data/mRNA_data.csv",DataFrame)
 T1 = mRNA_data[!,"Average_time(h)"]
-mRNA_Venus = mRNA_data[!,"<Venus+CueR+Cu> (nM)"]
+mRNA_Venus = mRNA_data[!,"<Venus+CueR+Cu>(nM)"]
 stdev_Venus = mRNA_data[!,"SE3(nM)"]
 mRNA_CueR = mRNA_data[!,"<CueR>(nM)"]
 stdev_CueR = mRNA_data[!,"SE_1(nM)"]
@@ -175,6 +177,8 @@ P4= Plots.plot(copper_sim,empty_test, xlabel="copper salt concentration (μM)", 
 
 P4= Plots.scatter!(copper_sim,exp_val, xlabel="copper salt concentration (μM)", ylabel="Venus (μM)",label="experimental dose response", legend=:bottomright, legendfontsize=4)
 
-
-
 Plots.plot(P1,P2,P3,P4, layout=(2,2))
+
+#Plots.savefig("./plots/Ensemble.pdf")
+#Plots.savefig("./plots/Model_fit_comp_N=5.pdf")
+Plots.savefig("./plots/Model_fit_comp_N=100.pdf")
