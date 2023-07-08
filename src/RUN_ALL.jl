@@ -12,13 +12,15 @@ using Shell
 
 # # DELETE POETS ENSEMBLE FILES
 # Shell.run("rm -f simulated/POETS/*");
+# Shell.run("rm -f simulated/POETS_N_Vary/N=5/*");
+# Shell.run("rm -f simulated/POETS_N_Vary/N=100/*");
 
 #script takes about 45 min to run appropos
 # ESTIMATE PARAMETERS
 include("Parameter_Estimation_W_splined.jl");
 #include("Parameter_Estimation_W_splined_N=100.jl"); UNCOMMENT ME FOR RUNNING THIS ENSEMBLE FOR MODEL FIT
 #include("Parameter_Estimation_W_splined_N=5.jl"); UNCOMMENT ME FOR RUNNING THIS ENSEMBLE FOR MODEL FIT
-include("Updated_Driver.jl");
+include("Updated_Driver.jl"); #uncomment specific graphs in the file
 include("Parameter_set.jl");
 
 # SENSITIVITY
@@ -48,6 +50,9 @@ include("Ensemble_plot_Kc.jl")
 include("Ensemble_plot_n.jl")
 include("Ensemble_misc.jl")
 
+#include("Model_pred_N_vary.jl) #for comparisons based on the N files
+
+include("Model_stats.jl") #calculates the overall model's predictive power as stat terms
 
 
 
