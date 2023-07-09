@@ -1,0 +1,79 @@
+LOCUS       Linear_T7_CueROp        1152 bp    DNA        linear       12-OCT-2022
+DEFINITION  .
+ACCESSION   
+VERSION     
+SOURCE      .
+  ORGANISM  .
+COMMENT     
+COMMENT     ApEinfo:methylated:1
+FEATURES             Location/Qualifiers
+     misc_feature    126..146
+                     /locus_tag="T7 A15G Promoter"
+                     /label="T7 A15G Promoter"
+                     /ApEinfo_label="T7 A15G Promoter"
+                     /ApEinfo_fwdcolor="#00ffff"
+                     /ApEinfo_revcolor="green"
+                     /ApEinfo_graphicformat="arrow_data {{0 0.5 0 1 2 0 0 -1 0
+                     -0.5} {} 0} width 5 offset 0"
+     misc_feature    224..229
+                     /locus_tag="RBS"
+                     /label="RBS"
+                     /ApEinfo_label="RBS"
+                     /ApEinfo_fwdcolor="#408080"
+                     /ApEinfo_revcolor="green"
+                     /ApEinfo_graphicformat="arrow_data {{0 1 2 0 0 -1} {} 0}
+                     width 5 offset 0"
+     misc_feature    147..177
+                     /locus_tag="CueR Operator seq"
+                     /label="CueR Operator seq"
+                     /ApEinfo_label="CueR Operator seq"
+                     /ApEinfo_fwdcolor="#ff80ff"
+                     /ApEinfo_revcolor="green"
+                     /ApEinfo_graphicformat="arrow_data {{0 0.5 0 1 2 0 0 -1 0
+                     -0.5} {} 0} width 5 offset 0"
+     misc_feature    981..1027
+                     /locus_tag="T7 terminator"
+                     /label="T7 terminator"
+                     /ApEinfo_label="T7 terminator"
+                     /ApEinfo_fwdcolor="cyan"
+                     /ApEinfo_revcolor="green"
+                     /ApEinfo_graphicformat="arrow_data {{0 1 2 0 0 -1} {} 0}
+                     width 5 offset 0"
+     misc_feature    913..915
+                     /locus_tag="END"
+                     /label="END"
+                     /ApEinfo_label="END"
+                     /ApEinfo_fwdcolor="#ff4329"
+                     /ApEinfo_revcolor="green"
+                     /ApEinfo_graphicformat="arrow_data {{0 1 2 0 0 -1} {} 0}
+                     width 5 offset 0"
+     misc_feature    238..912
+                     /locus_tag="deGFP"
+                     /label="deGFP"
+                     /ApEinfo_label="deGFP"
+                     /ApEinfo_fwdcolor="#848668"
+                     /ApEinfo_revcolor="green"
+                     /ApEinfo_graphicformat="arrow_data {{0 0.5 0 1 2 0 0 -1 0
+                     -0.5} {} 0} width 5 offset 0"
+ORIGIN
+        1 AGACTATCGC ACCATCAGCC AGAAAACCGA ATTTTGCTGG GTGGGCTAAC GATATCCGCC
+       61 TGATGCGTGA ACGTGACGGA CGTAACCACC GCGACATGTG TGTGCTGTTC CGCTGGGCAT
+      121 GCAATTAATA CGACTCACTA TAGGGGTTGA CCTTCCCCTT GCTGGAAGGT TTAACCTAGA
+      181 CCACAACGGT TTCCCTCTAG AAATAATTTT GTTTAACTTT AAGAAGGAGA TATACATATG
+      241 GAGCTTTTCA CTGGCGTTGT TCCCATCCTG GTCGAGCTGG ACGGCGACGT AAACGGCCAC
+      301 AAGTTCAGCG TGTCCGGCGA GGGCGAGGGC GATGCCACCT ACGGCAAGCT GACCCTGAAG
+      361 TTCATCTGCA CCACCGGCAA GCTGCCCGTG CCCTGGCCCA CCCTCGTGAC CACCCTGACC
+      421 TACGGCGTGC AGTGCTTCAG CCGCTACCCC GACCACATGA AGCAGCACGA CTTCTTCAAG
+      481 TCCGCCATGC CCGAAGGCTA CGTCCAGGAG CGCACCATCT TCTTCAAGGA CGACGGCAAC
+      541 TACAAGACCC GCGCCGAGGT GAAGTTCGAG GGCGACACCC TGGTGAACCG CATCGAGCTG
+      601 AAGGGCATCG ACTTCAAGGA GGACGGCAAC ATCCTGGGGC ACAAGCTGGA GTACAACTAC
+      661 AACAGCCACA ACGTCTATAT CATGGCCGAC AAGCAGAAGA ACGGCATCAA GGTGAACTTC
+      721 AAGATCCGCC ACAACATCGA GGACGGCAGC GTGCAGCTCG CCGACCACTA CCAGCAGAAC
+      781 ACCCCCATCG GCGACGGCCC CGTGCTGCTG CCCGACAACC ACTACCTGAG CACCCAGTCC
+      841 GCCCTGAGCA AAGACCCCAA CGAGAAGCGC GATCACATGG TCCTGCTGGA GTTCGTGACC
+      901 GCCGCCGGGA TCTAAGGATC CGGCTGCTAA CAAAGCCCGA AAGGAAGCTG AGTTGGCTGC
+      961 TGCCACCGCT GAGCAATAAC TAGCATAACC CCTTGGGGCC TCTAAACGGG TCTTGAGGGG
+     1021 TTTTTTGCTG AAAGGAGGAA CTATATCCGG ATATCCACAG GACGGGTGTG GTCGCCATGA
+     1081 TCGCGTAGTC GAGCAGCCCA GTAGTAGGTT GAGGCCGTTG AGCACCGCCG CCGCAAGGAA
+     1141 TGGTGCATGC AA    
+//

@@ -1,0 +1,79 @@
+LOCUS       T7_CueROp_2X_deG        1183 bp    DNA        linear       23-JAN-2023
+DEFINITION  .
+ACCESSION   
+VERSION     
+SOURCE      .
+  ORGANISM  .
+COMMENT     
+COMMENT     ApEinfo:methylated:1
+FEATURES             Location/Qualifiers
+     misc_feature    126..146
+                     /locus_tag="T7 Promoter"
+                     /label="T7 Promoter"
+                     /ApEinfo_label="T7 Promoter"
+                     /ApEinfo_fwdcolor="#00ffff"
+                     /ApEinfo_revcolor="green"
+                     /ApEinfo_graphicformat="arrow_data {{0 0.5 0 1 2 0 0 -1 0
+                     -0.5} {} 0} width 5 offset 0"
+     misc_feature    255..260
+                     /locus_tag="RBS"
+                     /label="RBS"
+                     /ApEinfo_label="RBS"
+                     /ApEinfo_fwdcolor="#408080"
+                     /ApEinfo_revcolor="green"
+                     /ApEinfo_graphicformat="arrow_data {{0 1 2 0 0 -1} {} 0}
+                     width 5 offset 0"
+     misc_feature    178..208
+                     /locus_tag="CueR Operator seq"
+                     /label="CueR Operator seq"
+                     /ApEinfo_label="CueR Operator seq"
+                     /ApEinfo_fwdcolor="#ff80ff"
+                     /ApEinfo_revcolor="green"
+                     /ApEinfo_graphicformat="arrow_data {{0 0.5 0 1 2 0 0 -1 0
+                     -0.5} {} 0} width 5 offset 0"
+     misc_feature    1012..1058
+                     /locus_tag="T7 terminator"
+                     /label="T7 terminator"
+                     /ApEinfo_label="T7 terminator"
+                     /ApEinfo_fwdcolor="cyan"
+                     /ApEinfo_revcolor="green"
+                     /ApEinfo_graphicformat="arrow_data {{0 1 2 0 0 -1} {} 0}
+                     width 5 offset 0"
+     misc_feature    944..946
+                     /locus_tag="END"
+                     /label="END"
+                     /ApEinfo_label="END"
+                     /ApEinfo_fwdcolor="#ff4329"
+                     /ApEinfo_revcolor="green"
+                     /ApEinfo_graphicformat="arrow_data {{0 1 2 0 0 -1} {} 0}
+                     width 5 offset 0"
+     misc_feature    269..943
+                     /locus_tag="deGFP"
+                     /label="deGFP"
+                     /ApEinfo_label="deGFP"
+                     /ApEinfo_fwdcolor="#848668"
+                     /ApEinfo_revcolor="green"
+                     /ApEinfo_graphicformat="arrow_data {{0 0.5 0 1 2 0 0 -1 0
+                     -0.5} {} 0} width 5 offset 0"
+ORIGIN
+        1 AGACTATCGC ACCATCAGCC AGAAAACCGA ATTTTGCTGG GTGGGCTAAC GATATCCGCC
+       61 TGATGCGTGA ACGTGACGGA CGTAACCACC GCGACATGTG TGTGCTGTTC CGCTGGGCAT
+      121 GCAATTAATA CGACTCACTA TAGGGGTTGA CCTTCCCCTT GCTGGAAGGT TTAACCTTTG
+      181 ACCTTCCCCT TGCTGGAAGG TTTAACCTAG ACCACAACGG TTTCCCTCTA GAAATAATTT
+      241 TGTTTAACTT TAAGAAGGAG ATATACATAT GGAGCTTTTC ACTGGCGTTG TTCCCATCCT
+      301 GGTCGAGCTG GACGGCGACG TAAACGGCCA CAAGTTCAGC GTGTCCGGCG AGGGCGAGGG
+      361 CGATGCCACC TACGGCAAGC TGACCCTGAA GTTCATCTGC ACCACCGGCA AGCTGCCCGT
+      421 GCCCTGGCCC ACCCTCGTGA CCACCCTGAC CTACGGCGTG CAGTGCTTCA GCCGCTACCC
+      481 CGACCACATG AAGCAGCACG ACTTCTTCAA GTCCGCCATG CCCGAAGGCT ACGTCCAGGA
+      541 GCGCACCATC TTCTTCAAGG ACGACGGCAA CTACAAGACC CGCGCCGAGG TGAAGTTCGA
+      601 GGGCGACACC CTGGTGAACC GCATCGAGCT GAAGGGCATC GACTTCAAGG AGGACGGCAA
+      661 CATCCTGGGG CACAAGCTGG AGTACAACTA CAACAGCCAC AACGTCTATA TCATGGCCGA
+      721 CAAGCAGAAG AACGGCATCA AGGTGAACTT CAAGATCCGC CACAACATCG AGGACGGCAG
+      781 CGTGCAGCTC GCCGACCACT ACCAGCAGAA CACCCCCATC GGCGACGGCC CCGTGCTGCT
+      841 GCCCGACAAC CACTACCTGA GCACCCAGTC CGCCCTGAGC AAAGACCCCA ACGAGAAGCG
+      901 CGATCACATG GTCCTGCTGG AGTTCGTGAC CGCCGCCGGG ATCTAAGGAT CCGGCTGCTA
+      961 ACAAAGCCCG AAAGGAAGCT GAGTTGGCTG CTGCCACCGC TGAGCAATAA CTAGCATAAC
+     1021 CCCTTGGGGC CTCTAAACGG GTCTTGAGGG GTTTTTTGCT GAAAGGAGGA ACTATATCCG
+     1081 GATATCCACA GGACGGGTGT GGTCGCCATG ATCGCGTAGT CGAGCAGCCC AGTAGTAGGT
+     1141 TGAGGCCGTT GAGCACCGCC GCCGCAAGGA ATGGTGCATG CAA 
+//

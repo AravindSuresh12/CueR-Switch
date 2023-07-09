@@ -1,0 +1,66 @@
+LOCUS       New_DNA                  851 bp    DNA        linear       11-OCT-2022
+DEFINITION  .
+ACCESSION   
+VERSION     
+SOURCE      .
+  ORGANISM  .
+COMMENT     
+COMMENT     ApEinfo:methylated:1
+FEATURES             Location/Qualifiers
+     misc_feature    126..146
+                     /locus_tag="T7 A15G Promoter"
+                     /label="T7 A15G Promoter"
+                     /ApEinfo_label="T7 A15G Promoter"
+                     /ApEinfo_fwdcolor="#00ffff"
+                     /ApEinfo_revcolor="green"
+                     /ApEinfo_graphicformat="arrow_data {{0 0.5 0 1 2 0 0 -1 0
+                     -0.5} {} 0} width 5 offset 0"
+     misc_feature    193..198
+                     /locus_tag="RBS"
+                     /label="RBS"
+                     /ApEinfo_label="RBS"
+                     /ApEinfo_fwdcolor="#408080"
+                     /ApEinfo_revcolor="green"
+                     /ApEinfo_graphicformat="arrow_data {{0 1 2 0 0 -1} {} 0}
+                     width 5 offset 0"
+     misc_feature    207..614
+                     /locus_tag="CueR gene"
+                     /label="CueR gene"
+                     /ApEinfo_label="CueR gene"
+                     /ApEinfo_fwdcolor="#ffff00"
+                     /ApEinfo_revcolor="green"
+                     /ApEinfo_graphicformat="arrow_data {{0 0.5 0 1 2 0 0 -1 0
+                     -0.5} {} 0} width 5 offset 0"
+     misc_feature    612..614
+                     /locus_tag="STOP"
+                     /label="STOP"
+                     /ApEinfo_label="STOP"
+                     /ApEinfo_fwdcolor="#ff0000"
+                     /ApEinfo_revcolor="green"
+                     /ApEinfo_graphicformat="arrow_data {{0 0.5 0 1 2 0 0 -1 0
+                     -0.5} {} 0} width 5 offset 0"
+     misc_feature    680..726
+                     /locus_tag="T7 terminator"
+                     /label="T7 terminator"
+                     /ApEinfo_label="T7 terminator"
+                     /ApEinfo_fwdcolor="cyan"
+                     /ApEinfo_revcolor="green"
+                     /ApEinfo_graphicformat="arrow_data {{0 1 2 0 0 -1} {} 0}
+                     width 5 offset 0"
+ORIGIN
+        1 AGACTATCGC ACCATCAGCC AGAAAACCGA ATTTTGCTGG GTGGGCTAAC GATATCCGCC
+       61 TGATGCGTGA ACGTGACGGA CGTAACCACC GCGACATGTG TGTGCTGTTC CGCTGGGCAT
+      121 GCAATTAGTA CGACTCACTA TAGGGGAGAC CACAACGGTT TCCCTCTAGA AATAATTTTG
+      181 TTTAACTTTA AGAAGGAGAT ATACATATGA ACATCAGCGA TGTAGCAAAA ATTACCGGCC
+      241 TGACCAGCAA AGCCATTCGC TTCTATGAAG AGAAGGGGCT GGTGACGCCG CCGATGCGCA
+      301 GCGAAAACGG TTATCGCACC TACACGCAGC AGCATCTCAA CGAACTGACC TTACTGCGCC
+      361 AGGCACGGCA GGTGGGCTTT AACCTGGAAG AGAGCGGCGA GCTGGTGAAT CTGTTTAACG
+      421 ACCCGCAGCG GCACAGCGCC GACGTCAAAC GGCGCACGCT GGAGAAGGTG GCGGAGATCG
+      481 AACGACACAT TGAGGAGCTG CAATCCATGC GCGACCAGCT GCTGGCACTG GCGAATGCCT
+      541 GCCCTGGCGA TGACAGCGCC GACTGCCCGA TTATCGAAAA TCTCTCCGGC TGCTGTCATC
+      601 ATCGGGCAGG GTGAGGATCC GGCTGCTAAC AAAGCCCGAA AGGAAGCTGA GTTGGCTGCT
+      661 GCCACCGCTG AGCAATAACT AGCATAACCC CTTGGGGCCT CTAAACGGGT CTTGAGGGGT
+      721 TTTTTGCTGA AAGGAGGAAC TATATCCGGA TATCCACAGG ACGGGTGTGG TCGCCATGAT
+      781 CGCGTAGTCG AGCAGCCCAG TAGTAGGTTG AGGCCGTTGA GCACCGCCGC CGCAAGGAAT
+      841 GGTGCATGCA A    
+//
