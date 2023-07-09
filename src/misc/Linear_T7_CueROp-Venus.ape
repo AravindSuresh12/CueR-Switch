@@ -1,0 +1,72 @@
+LOCUS       Linear_T7_CueROp        1191 bp    DNA        linear       09-JUL-2023
+DEFINITION  .
+ACCESSION   
+VERSION     
+SOURCE      .
+  ORGANISM  .
+COMMENT     
+COMMENT     
+COMMENT     ApEinfo:methylated:1
+FEATURES             Location/Qualifiers
+     misc_feature    126..146
+                     /locus_tag="T7 A15G Promoter"
+                     /label="T7 A15G Promoter"
+                     /ApEinfo_label="T7 A15G Promoter"
+                     /ApEinfo_fwdcolor="#00ffff"
+                     /ApEinfo_revcolor="green"
+                     /ApEinfo_graphicformat="arrow_data {{0 0.5 0 1 2 0 0 -1 0
+                     -0.5} {} 0} width 5 offset 0"
+     misc_feature    224..229
+                     /locus_tag="RBS"
+                     /label="RBS"
+                     /ApEinfo_label="RBS"
+                     /ApEinfo_fwdcolor="#408080"
+                     /ApEinfo_revcolor="green"
+                     /ApEinfo_graphicformat="arrow_data {{0 1 2 0 0 -1} {} 0}
+                     width 5 offset 0"
+     misc_feature    147..177
+                     /locus_tag="CueR Operator seq"
+                     /label="CueR Operator seq"
+                     /ApEinfo_label="CueR Operator seq"
+                     /ApEinfo_fwdcolor="#ff80ff"
+                     /ApEinfo_revcolor="green"
+                     /ApEinfo_graphicformat="arrow_data {{0 0.5 0 1 2 0 0 -1 0
+                     -0.5} {} 0} width 5 offset 0"
+     misc_feature    1020..1066
+                     /locus_tag="T7 terminator"
+                     /label="T7 terminator"
+                     /ApEinfo_label="T7 terminator"
+                     /ApEinfo_fwdcolor="cyan"
+                     /ApEinfo_revcolor="green"
+                     /ApEinfo_graphicformat="arrow_data {{0 1 2 0 0 -1} {} 0}
+                     width 5 offset 0"
+     misc_feature    238..954
+                     /locus_tag="Venus_sequence"
+                     /label="Venus_sequence"
+                     /ApEinfo_label="Venus_sequence"
+                     /ApEinfo_fwdcolor="#fdfc00"
+                     /ApEinfo_revcolor="green"
+                     /ApEinfo_graphicformat="arrow_data {{0 1 2 0 0 -1} {} 0}
+                     width 5 offset 0"
+ORIGIN
+        1 AGACTATCGC ACCATCAGCC AGAAAACCGA ATTTTGCTGG GTGGGCTAAC GATATCCGCC
+       61 TGATGCGTGA ACGTGACGGA CGTAACCACC GCGACATGTG TGTGCTGTTC CGCTGGGCAT
+      121 GCAATTAATA CGACTCACTA TAGGGGTTGA CCTTCCCCTT GCTGGAAGGT TTAACCTAGA
+      181 CCACAACGGT TTCCCTCTAG AAATAATTTT GTTTAACTTT AAGAAGGAGA TATACATATG
+      241 AGCAAAGGCG AAGAACTGTT CACGGGTGTG GTTCCGATCC TGGTTGAACT GGATGGCGAT
+      301 GTGAACGGTC ATAAATTTAG CGTGTCTGGT GAAGGCGAAG GTGATGCGAC CTACGGCAAA
+      361 CTGACGCTGA AACTGATTTG CACCACGGGT AAACTGCCGG TTCCGTGGCC GACCCTGGTG
+      421 ACCACGCTGG GTTATGGTCT GATGTGTTTC GCACGTTACC CGGATCACAT GAAACGCCAT
+      481 GATTTCTTTA AATCTGCGAT GCCGGAAGGC TATGTGCAGG AACGTACCAT CTTTTTCAAA
+      541 GATGATGGTA ACTACAAAAC CCGCGCGGAA GTTAAATTTG AAGGCGATAC GCTGGTGAAC
+      601 CGTATTGAAC TGAAAGGTAT CGATTTCAAA GAAGATGGCA ATATTCTGGG TCACAAACTG
+      661 GAATACAACT ACAACAGTCA TAACGTGTAC ATTACCGCCG ATAAACAGAA AAACGGTATC
+      721 AAAGCAAACT TCAAAATCCG TCACAACATC GAAGATGGCG GTGTTCAGCT GGCCGATCAT
+      781 TACCAGCAGA ACACCCCGAT TGGCGATGGT CCGGTGCTGC TGCCGGATAA TCATTATCTG
+      841 AGTTACCAGA GCGCGCTGTC TAAAGATCCG AATGAAAAAC GCGATCACAT GGTTCTGCTG
+      901 GAATTTGTGA CCGCGGCCGG CATTACGCAT GGTATGGATG AACTGTATAA ATAAGGATCC
+      961 GGCTGCTAAC AAAGCCCGAA AGGAAGCTGA GTTGGCTGCT GCCACCGCTG AGCAATAACT
+     1021 AGCATAACCC CTTGGGGCCT CTAAACGGGT CTTGAGGGGT TTTTTGCTGA AAGGAGGAAC
+     1081 TATATCCGGA TATCCACAGG ACGGGTGTGG TCGCCATGAT CGCGTAGTCG AGCAGCCCAG
+     1141 TAGTAGGTTG AGGCCGTTGA GCACCGCCGC CGCAAGGAAT GGTGCATGCA A
+//
