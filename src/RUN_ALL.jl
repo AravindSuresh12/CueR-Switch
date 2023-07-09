@@ -18,18 +18,23 @@ using Shell
 #script takes about 45 min to run appropos
 # ESTIMATE PARAMETERS
 include("Parameter_Estimation_W_splined.jl");
-#include("Parameter_Estimation_W_splined_N=100.jl"); UNCOMMENT ME FOR RUNNING THIS ENSEMBLE FOR MODEL FIT
-#include("Parameter_Estimation_W_splined_N=5.jl"); UNCOMMENT ME FOR RUNNING THIS ENSEMBLE FOR MODEL FIT
-include("Updated_Driver.jl"); #uncomment specific graphs in the file
-include("Parameter_set.jl");
+include("Parameter_Estimation_W_splined_N=100.jl"); 
+include("Parameter_Estimation_W_splined_N=5.jl"); 
+include("Updated_Driver.jl");
+include("Updated_Driver_N=100trail.jl");
+include("Updated_Driver_N=5trail.jl");
 
-# SENSITIVITY
+
+# SENSITIVITY - choose whichever N series (N=5,20 OR 100) you want to and update the directories. The current sims run with N=20
 include("sensitivity-copper-cuer-updated.jl");
 include("visualize-sensitivity-array.jl");
 
+#Parameters sets 
+include("Parameter_set.jl");
 
-# AFTER ESTIMATING PARAMETERS
-include("copper_dynamics_automated.jl") #MAKE SURE to confirm the simulation file being used, eg. PC_T5.dat
+
+# AFTER ESTIMATING PARAMETERS - 
+include("copper_dynamics_automated.jl") #MAKE SURE to confirm the simulation file being used, eg. PC_T5.dat- you can modify
 include("dose_response_ensemble.jl") #MAKE SURE to confirm the simulation file being used, eg. PC_T5.dat
 
 #dose response plot-  #MAKE SURE to confirm the simulation file being used, eg. PC_T5.dat
@@ -50,9 +55,8 @@ include("Ensemble_plot_Kc.jl")
 include("Ensemble_plot_n.jl")
 include("Ensemble_misc.jl")
 
-#include("Model_pred_N_vary.jl) #for comparisons based on the N files
-
-include("Model_stats.jl") #calculates the overall model's predictive power as stat terms
+include("Model_pred_N_vary.jl") #for comparisons based on the N files
+include("Model_stats.jl") #calculates the overall model's predictive power as stat terms and compares it with the number of iterations
 
 
 
