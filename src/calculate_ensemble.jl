@@ -170,7 +170,7 @@ end
 
 # setup paths -
 path_to_sim_file = "$(pwd())/simulated/copper_dynamics"
-path_to_ensemble_file = "$(pwd())/simulated/POETS/PC_T6.dat"
+path_to_ensemble_file = "$(pwd())/simulated/POETS/PC_T5.dat"
 
 # call -
 time_start = 0.0

@@ -176,6 +176,4 @@ P4= Plots.plot(copper_sim,empty_test, xlabel="copper salt concentration (μM)", 
 P4= Plots.scatter!(copper_sim,exp_val, xlabel="copper salt concentration (μM)", ylabel="Venus (μM)",label="experimental dose response", legend=:bottomright, legendfontsize=4)
 
 Plots.plot(P1,P2,P3,P4, layout=(2,2))
-
-
 Plots.savefig("./plots/Model_fit_comp_N=100.pdf")

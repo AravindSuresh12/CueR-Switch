@@ -7,14 +7,10 @@ function main(path_to_simulation_dir::String, path_to_plot_file::String, concent
     searchdir(path,key) = filter(x->contains(x,key),readdir(path))
     file_name_array = searchdir(path_to_simulation_dir, ".dat")
     number_of_trials = length(file_name_array)
-    # # initialize -> hardcode the dimension for now
-    # data_array = zeros(1201,number_of_trials)
-    # time_array = zeros(1201,number_of_trials)
 
 	dt = 0.1 # hr
 	tEND = convert(Int64,16/dt)
 	t_intervals = collect(0:dt:tEND*dt)
-	# t_intervals = [0,2,4,6,8,10,12]
 	data_array = zeros(length(t_intervals),number_of_trials)
 
     # read the simulation dir -
@@ -30,12 +26,11 @@ function main(path_to_simulation_dir::String, path_to_plot_file::String, concent
 		prot_values = spline_obj.(t_intervals)
 		data_array[:, file_index] = prot_values
 
-        # PyPlot.plot(t,x,color="dimgrey",alpha=0.80,lw=0.5)
     end
     # plot -
 	μ = mean(data_array,dims=2)
     σ = std(data_array,dims=2)
-    LB = μ .- (1.96/sqrt(1))*σ
+    LB = μ .- (1.96/sqrt(1))*σ #already the data is in sterr
     UB = μ .+ (1.96/sqrt(1))*σ
 
     fill_between(t_intervals, vec(UB), vec(LB), color="#5c995b", alpha=0.40)

@@ -81,16 +81,16 @@ function update_model_dictionary(parameter_array,default_model_dictionary)
 	
 	# update the translation time -
 	data_dictionary["half_life_translation_capacity"] = parameter_array[15]
-	
 	biophysical_constants_dictionary = data_dictionary["biophysical_constants_dictionary"]
-	biophysical_constants_dictionary["translation_saturation_constant"] = parameter_array[16]
-	data_dictionary["biophysical_constants_dictionary"] = biophysical_constants_dictionary
 	
-	# Copper CueR binding parameters
+    biophysical_constants_dictionary["translation_saturation_constant"] = parameter_array[16]
+    biophysical_constants_dictionary["transcription_saturation_constant"]=parameter_array[17]
+ 
+
+	# gluconate GntR binding parameters
 	cuprous_parameter_dictionary = data_dictionary["cuprous_parameter_dictionary"]
-	cuprous_parameter_dictionary["K_diss_CuSO4"] = parameter_array[17]
-	cuprous_parameter_dictionary["n_copper_cuer"]= parameter_array[18]
-	cuprous_parameter_dictionary["k_t"]= parameter_array[19]
+	cuprous_parameter_dictionary["K_diss_CuSO4"] = parameter_array[18]
+    cuprous_parameter_dictionary["n_copper_cuer"] = parameter_array[19]
 
 	data_dictionary["cuprous_parameter_dictionary"] = cuprous_parameter_dictionary
 	
@@ -120,8 +120,10 @@ function update_model_dictionary(parameter_array,default_model_dictionary)
     return data_dictionary
 end
 
+copper_array=[0,5,10,50,100]
 
-for copper_conc in Any[0,5,10,50,100] #for my issue
+l=length(copper_array)
+for k = 1:l # for now just do it for 5 
 
 
 function main(path_to_ensemble_file::String, path_to_sim_dir::String; sample_fraction::Float64=1.0)
@@ -163,11 +165,11 @@ function main(path_to_ensemble_file::String, path_to_sim_dir::String; sample_fra
         model_data_dictionary = update_model_dictionary(local_parameter_array, customized_data_dictionary)
 
 		cuprous_parameter_dictionary = model_data_dictionary["cuprous_parameter_dictionary"]
-		cuprous_parameter_dictionary["copper_salt_conc"] =copper_conc
+		cuprous_parameter_dictionary["copper_salt_conc"]=copper_array[k]
 		model_data_dictionary["cuprous_parameter_dictionary"] = cuprous_parameter_dictionary
 
 		# solve the model equations -
-        (T,X) = SolveBalances(time_start,time_stop,time_step_size,model_data_dictionary)
+        (T,X) = SolveBalances(time_start,time_stop,time_step_size,model_data_dictionary) #the dictionary needs to update here- not updating
 
         # dump -
         data_array = [T X]
@@ -180,7 +182,7 @@ function main(path_to_ensemble_file::String, path_to_sim_dir::String; sample_fra
 end
 
 # setup paths -
-local path_to_sim_file = "$(pwd())/simulated/copper_dynamics/$(copper_conc)uM"
+local path_to_sim_file = "$(pwd())/simulated/copper_dynamics/$(copper_array[k])uM"
 local path_to_ensemble_file = "$(pwd())/simulated/POETS/PC_T5.dat"
 
 

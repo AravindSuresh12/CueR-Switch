@@ -105,7 +105,7 @@ function calculate_transcription_control_array(t::Float64,x::Array{Float64,1},da
 
 	control_array[2]=num/den
 
-	correction_term = (x[7]/1000.0)
+	correction_term = (x[7]/1000.0) #1000.0 here to indicate T7 promoter control... shows results which make sense
     control_array = control_array*correction_term
 
 end

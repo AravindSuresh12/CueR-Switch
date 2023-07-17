@@ -1,5 +1,5 @@
 ##
-
+@time begin 
 include("Include.jl")
 ##
 function objective_function(parameter_guess_array,time_start,time_step_size,time_stop,model_data_dictionary,exp_data_dictionary)
@@ -477,4 +477,5 @@ for trial_index = 1:number_of_trials
     writedlm(fname,PC)
 
     @show trial_index
+end
 end

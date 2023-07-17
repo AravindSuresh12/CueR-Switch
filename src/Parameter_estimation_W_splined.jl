@@ -1,5 +1,7 @@
 ##
 
+@time begin
+
 include("Include.jl")
 ##
 function objective_function(parameter_guess_array,time_start,time_step_size,time_stop,model_data_dictionary,exp_data_dictionary)
@@ -277,16 +279,16 @@ function check_parameter_bounds(parameter_array)  #COMMENTS HERE REFER TO THE OR
         0.04 0.08        ;   # 6     K_CueR_OCueR_holo um 0.035 to 0.045
 
         # time constants - units h
-		0.001 100.0         ;	# 7	 mRNA_CueR 0.045 to 0.06
-	    0.001 100.0         ;	# 8	 mRNA_Venus 18 to 22
-	    10.0 100.0         ;	# 9	 protein_CueR 55 to 70
-		0.001 100.0         ;	# 10 protein_Venus- CHANGED this to 1.8 to 2.2
+		0.001 100.0         ;	# 7	 mRNA_CueR 
+	    10.0 100.0         ;	# 8	 mRNA_Venus
+	    10.0 100.0         ;	# 9	 protein_CueR
+		0.001 100.0         ;	# 10 protein_Venus-
 
         # degradation mods - unts h
 		0.001  100.0 ;	# 11	        mRNA_CueR 1.8 to 2 
 	    0.001  100.0	    ;	# 12	        mRNA_Venus 3.8 to 4.5
         0.001  100.0;	# 13	        protein_CueR 2.8 to 3
-        0.001  100.0    ;	# 14	        protein_Venus 1.4 to 1.6
+        0.5    100.0    ;	# 14	        
 
          # w -
         4.0  10.0           ;   # 15  units h  translation capacity half-life 5 to 7.5 
@@ -406,15 +408,15 @@ pvec_initial = [
 
 	# time constants -
 	1         ;	# 7	    mRNA_CueR 0.05
-	1         ;	# 8	    mRNA_Venus 20
+	12         ;	# 8	    mRNA_Venus
 	10         ;	# 9	    protein_CueR 60
-	0.5        ;	# 10	    protein_Venus 2
+	0.075        ;	# 10	    protein_Venus 2
 
 	# degradation mods -
 	1	        ;	# 11	    mRNA_CueR 2
 	1 	    ;	# 12	    mRNA_Venus 4
-	1 	    ;	# 13	    protein_CueR 3
-	1 	    ;	# 14	    protein_Venus 1.5
+	1.3 	    ;	# 13	    protein_CueR 3
+	0.75 	    ;	# 14	    protein_Venus 1.5
 
 	 # w -
 	6.0           ;   # 15   translation capacity half-life 6
@@ -477,4 +479,5 @@ for trial_index = 1:number_of_trials
     writedlm(fname,PC)
 
     @show trial_index
+end
 end

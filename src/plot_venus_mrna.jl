@@ -57,8 +57,6 @@ function main(path_to_simulation_dir::String, path_to_plot_file::String, concent
 	PyPlot.plot(figsize=(5,4))
 	PyPlot.xlabel("Time (hr)", fontsize=20)
     PyPlot.ylabel("[Venus] (nM)", fontsize=20)
-    # PyPlot.axis([-0.5,16.5,-50,1600])
-    # PyPlot.xticks([0,1,2,4,8,16], fontsize=12)
     PyPlot.yticks(fontsize=22)
     PyPlot.tight_layout()
     PyPlot.savefig("$(path_to_plot_file)/mrna-venus_$(concentration)uM.pdf")

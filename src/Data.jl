@@ -92,7 +92,7 @@ function build_data_dictionary(time_span::Tuple{Float64,Float64,Float64}, path_t
 		0.0	;	# 4	mRNA_Venus
 		0.0	;	# 5	protein_CueR
 		0.0	;	# 6	protein_Venus
-		# translation capacity -
+		# transcription/translational capacity -
 		100.0	;	#7 translation capacity 
 	]
 

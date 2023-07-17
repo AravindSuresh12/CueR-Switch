@@ -4,7 +4,7 @@ function main(path_to_simulation_dir::String, path_to_plot_file::String, concent
     # what index is prot venus?
     state_index = 6
     # how many files?
-    searchdir(path,key) = filter(x->contains(x,key),readdir(path))
+    searchdir(path,key) = filter(x->contains(x,key),readdir(path)) #function
     file_name_array = searchdir(path_to_simulation_dir, ".dat")
     number_of_trials = length(file_name_array)
 
@@ -41,9 +41,9 @@ function main(path_to_simulation_dir::String, path_to_plot_file::String, concent
     prot_data = CSV.read("./data/protein_data.csv",DataFrame)
 
 	# plot the experimemtal data -
-	TEXP = prot_data[!,"time(h)"]
-	DATA = prot_data[!,"Mean_100uM(uM)"]
-    STD = prot_data[!,"Sterr_100uM(uM)"] 
+	TEXP = prot_data[!,"time(h)"]   
+	DATA = prot_data[!,"Mean_0uM(uM)"] #change this for the column name for plotting specific data
+    STD = prot_data[!,"Sterr_0uM(uM)"] 
 
 
 
@@ -54,8 +54,6 @@ function main(path_to_simulation_dir::String, path_to_plot_file::String, concent
 	PyPlot.plot(figsize=(5,4))
 	PyPlot.xlabel("Time (hr)", fontsize=20)
     PyPlot.ylabel("[Venus] (μM)", fontsize=20)
-    # PyPlot.axis([-0.5,16.5,-50,1600])
-    # PyPlot.yticks([0,0.4,0.8,1.2,1.6,2.0], fontsize=22)
     PyPlot.yticks(fontsize=22)
     PyPlot.tight_layout()
     PyPlot.savefig("$(path_to_plot_file)/prot-Venus_$(concentration)uM.pdf")
@@ -63,7 +61,6 @@ end
 
 
 for conc_ in Any[5]
-
 concentration = conc_
 local path_to_simulation_dir = "$(pwd())/simulated/copper_dynamics/$(conc_)uM"
 local path_to_plot_file = "$(pwd())/plots"

@@ -45,8 +45,6 @@ T_K = data_dictionary["T_K"]
 # compute W -
 
 PC = readdlm("./simulated/POETS/PC_T5.dat") #N=20
-#PC= readdlm("./simulated/POETS_N_Vary/N=5/PC_T5.dat") 
-#PC = readdlm("./simulated/POETS_N_Vary/N=100/PC_T5.dat") 
 average_params = mean(PC,dims=2)
 poets_params=average_params
 
@@ -69,7 +67,7 @@ time_constant_modifier_array = [
     poets_params[7]	        ;	# 4	mRNA_CueR
     poets_params[8]       ;	    # 5	mRNA_Venus
     poets_params[9]	        ;	# 7	protein_CueR
-    poets_params[10]	        ;# 8 protein_Venus- should be 0.5
+    poets_params[10]	        ;# 8 protein_Venus
 ]
 
 data_dictionary["time_constant_modifier_array"] = time_constant_modifier_array
@@ -179,6 +177,4 @@ P4= Plots.scatter!(copper_sim,exp_val, xlabel="copper salt concentration (μM)",
 
 Plots.plot(P1,P2,P3,P4, layout=(2,2))
 
-Plots.savefig("./plots/Ensemble.pdf")
-#Plots.savefig("./plots/Model_fit_comp_N=5.pdf")
-#Plots.savefig("./plots/Model_fit_comp_N=100.pdf")
+# Plots.savefig("./plots/Ensemble.pdf")

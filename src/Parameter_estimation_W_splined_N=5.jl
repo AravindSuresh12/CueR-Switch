@@ -1,4 +1,5 @@
 ##
+@time  begin 
 
 include("Include.jl")
 ##
@@ -477,4 +478,6 @@ for trial_index = 1:number_of_trials
     writedlm(fname,PC)
 
     @show trial_index
+end
+
 end

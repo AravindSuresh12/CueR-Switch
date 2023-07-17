@@ -160,35 +160,48 @@ function main(path_to_ensemble_file::String)
     end
 
     # compute half lifes for mRNA_venus -
-    deg_mod_mRNA = PA[12,:]
+    deg_mod_mRNA_venus = PA[12,:]
     number_of_mRNA = 1
-    (number_of_samples) = length(deg_mod_mRNA)
+    (number_of_samples) = length(deg_mod_mRNA_venus)
     mRNA_half_life_array_venus = zeros(number_of_samples)
     kD = log(2)/(default_mRNA_half_life_in_hr)
     for sample_index = 1:number_of_samples
-        kA = kD*deg_mod_mRNA[sample_index]
+        kA = kD*deg_mod_mRNA_venus[sample_index]
         half_life_value = (log(2)/kA)*60    # convert to min
         mRNA_half_life_array_venus[sample_index] = half_life_value
     end
 
 
     # compute half lifes for protein -
-    deg_mod_prot = PA[13:14,:]
-    (number_of_prot,number_of_samples) = size(deg_mod_prot)
-    prot_half_life_array = zeros(number_of_prot, number_of_samples)
-    for prot_index = 1:number_of_prot
+    deg_mod_prot_cuer = PA[13,:]
+    number_of_samples=length(deg_mod_prot_cuer)
+    number_of_prot=1
+    prot_half_life_array_cuer = zeros(number_of_samples,number_of_prot)
 
-        kD = log(2)/(default_prot_half_life_in_hr)
 
-        for sample_index = 1:number_of_samples
-            kA = kD*deg_mod_prot[prot_index, sample_index]
-            half_life_value = (log(2)/kA)*(1/24)    # convert to days
-            prot_half_life_array[prot_index, sample_index] = half_life_value
-        end
+    kD = log(2)/(default_prot_half_life_in_hr)
+
+    for sample_index = 1:number_of_samples
+        kA = kD*deg_mod_prot_cuer[sample_index]
+        half_life_value_cuer = (log(2)/kA)*(1/24)    # convert to days
+        prot_half_life_array_cuer[sample_index] = half_life_value_cuer
     end
 
+    deg_mod_prot_venus = PA[14,:]
+    number_of_samples=length(deg_mod_prot_venus)
+    number_of_prot_venus=1
+    prot_half_life_array_venus = zeros(number_of_samples,number_of_prot_venus)
+
+
+    for sample_index = 1:number_of_samples
+        kA = kD*deg_mod_prot_venus[sample_index]
+        half_life_value_venus = (log(2)/kA)*(1/24)    # convert to days
+        prot_half_life_array_venus[sample_index] = half_life_value_venus
+    end
+
+
     # return -
-    return (tau_tx_ensemble_cuer,tau_tx_ensemble_venus,tau_tl_ensemble_cuer, tau_tl_ensemble_venus, KL_array, KX_array, half_life_TL_array, dE_array, mRNA_half_life_array_cuer, mRNA_half_life_array_venus, prot_half_life_array,n_array, K_array)
+    return (tau_tx_ensemble_cuer,tau_tx_ensemble_venus,tau_tl_ensemble_cuer, tau_tl_ensemble_venus, KL_array, KX_array, half_life_TL_array, dE_array, mRNA_half_life_array_cuer, mRNA_half_life_array_venus, prot_half_life_cuer,prot_half_life_venus,n_array, K_array)
 end
 
 # setup -

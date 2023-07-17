@@ -112,19 +112,3 @@ end
 path_to_ensemble_file = "./simulated/POETS/PC_T5.dat"
 
 
-# dose_data = CSV.read("./data/dose_response.csv",DataFrame)
-# exp_val= dose_data[!,"Venus(uM)"]
-# exp_std= dose_data[!,"STERR(uM)"]
-
-# empty_test=[]
-
-# copper_sim=[0,5,10,50,100]
-
-# for element in copper_sim
-#     push!(empty_test,predict(path_to_ensemble_file, element))
-# end
-
-# mae = mean(abs.(empty_test .- exp_val))
-# target_range = maximum(exp_val) - minimum(exp_val)
-
-# mae_percentage = (mae / target_range) * 100.0

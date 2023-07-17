@@ -1,11 +1,11 @@
 #Model stats
 
-include("AUC_model.jl")
+include("Reg_model.jl")
 
 #path_to_ensemble_file = "./simulated/POETS/PC_T5.dat" 
 #path_to_ensemble_file = "./simulated/POETS_N_Vary/N=5/PC_T5.dat" 
 path_to_ensemble_file = "./simulated/POETS_N_Vary/N=100/PC_T5.dat"
-#Uncomment us for calculating model performance for increasing N
+#Uncomment us for calculating model performance of predicting DR for increasing N
 
 
 poets= readdlm(path_to_ensemble_file);
