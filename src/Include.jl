@@ -45,7 +45,7 @@ using Statistics    # pre-installed w/Julia
 using Pkg           # pre-installed w/Julia
 # installed_package_set = keys(Pkg.installed())
 
-# # Do we have DifferentialEquations?
+# # Do we have DifferentialEquations? #should be version 6.5 or less for DiffEq.jl
 # if (in("DifferentialEquations",installed_package_set) == false)
 #     Pkg.add("DifferentialEquations")
 # end
@@ -92,7 +92,7 @@ using Roots
 #     Pkg.add("DataInterpolations")
 # end
 
-# if (in("DiffEqSensitivity",installed_package_set) == false)
+# if (in("DiffEqSensitivity",installed_package_set) == false) 
 #     Pkg.add("DiffEqSensitivity")
 # end
 
